@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'http://localhost:3000/api/graphql'
+schema: '../api/src/assets/schema.gql'
 generates:
   src/generated/graphql.ts:
     plugins:

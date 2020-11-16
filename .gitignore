@@ -74,3 +74,4 @@ node_modules/
 /packages/app/src/generated/
 /packages/app/src/**/*.generated.ts
 /packages/app/src/**/*.generated.tsx
+/packages/app/src/**/*.gql-def.ts
