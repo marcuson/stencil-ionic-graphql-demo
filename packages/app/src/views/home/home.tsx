@@ -21,6 +21,10 @@ export class SigDemoHome {
               return 'Loading...';
             }
 
+            if (!data.notes?.length) {
+              return <ion-text>No notes yet!</ion-text>;
+            }
+
             return data.notes.map(note => {
               return (
                 <sig-demo-note

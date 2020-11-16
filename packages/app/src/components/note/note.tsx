@@ -46,10 +46,11 @@ export class SigDemoNote {
 
   getMsg(originalMsg: string) {
     const msg = originalMsg
-      ? this.isPreview && originalMsg.length > 200
-        ? `${originalMsg.substring(0, 197)}...`
+      ? this.isPreview && originalMsg.length > 100
+        ? `${originalMsg.substring(0, 97)}...`
         : originalMsg
       : '';
+
     return msg;
   }
 
