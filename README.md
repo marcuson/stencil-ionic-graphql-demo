@@ -4,8 +4,8 @@
 
 You must have the following tools installed on your machine:
 
-- Node (>= 14) and npm
-- pnpm (>= 5), just run `npm i -g pnpm`
+- Node (ver. 14+) and npm
+- pnpm (ver. 5+), just run `npm i -g pnpm` to install
 - an IDE of your choice (VSCode recommended)
 
 ## How to start the demo
@@ -20,3 +20,6 @@ pnpm run watch
 
 The API server should listen on port `3000`.
 The Stencil app should open on browser, port `3333`.
+
+**NOTE**: API server nedds a little time to build, if you see some "connection refused" errors
+on browser console try to wait a bit and then reload the page manually.
