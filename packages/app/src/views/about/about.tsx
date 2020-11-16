@@ -12,7 +12,7 @@ export class SigDemoAbout {
         <p>A simple demo to show Stencil + Ionic + GraphQL awesomeness!</p>
         <p>
           GitHub link{' '}
-          <a href="https://github.com" target="_blank">
+          <a href="https://github.com/marcuson/stencil-ionic-graphql-demo" target="_blank">
             here.
           </a>
         </p>
