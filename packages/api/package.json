@@ -1,0 +1,91 @@
+{
+  "name": "marcuson-stencil-ionic-graphql-demo-api",
+  "description": "Stencil + Ionic + GraphQL demo - API",
+  "version": "1.0.0",
+  "author": "marcuson",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "class-validator": "^0.12.2",
+    "cors": "^2.8.5",
+    "debug": "^4.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
+    "guid-typescript": "^1.0.9",
+    "inversify": "^5.0.1",
+    "inversify-binding-decorators": "^4.0.0",
+    "inversify-express-utils": "^6.3.2",
+    "inversify-inject-decorators": "^3.1.0",
+    "inversify-logger-middleware": "^3.1.0",
+    "jsonfile": "^6.1.0",
+    "lodash": "^4.17.20",
+    "mime": "^1",
+    "readable-stream": "^3.6.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "winston": "^3.3.3",
+    "winston-transport": "https://github.com/winstonjs/winston-transport"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/jsonfile": "^6.0.0",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.7",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.2",
+    "is-there": "^4.5.1",
+    "minimatch": "^3.0.4",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.7.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "shell-quote": "^1.7.2",
+    "source-map-support": "^0.5.19",
+    "supports-color": "^7.2.0",
+    "ts-loader": "^8.0.11",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
+    "tslint": "^6.1.2",
+    "tslint-no-unused-expression-chai": "^0.1.4",
+    "typescript": "^4.0.5"
+  },
+  "engines": {
+    "node": ">= 14",
+    "pnpm": ">= 5"
+  },
+  "license": "CC BY-NC-ND",
+  "main": "dist/app/index.js",
+  "private": true,
+  "scripts": {
+    "assets": "cpx \"src/assets/**/*\" \"dist/assets\"",
+    "build": "pnpm run graphql:schema && pnpm run assets && pnpm run tsc",
+    "clean": "rimraf dist",
+    "graphql:schema": "ts-node-script ./scripts/update-graphql-schema.ts",
+    "pretest": "rimraf test-results",
+    "prettier": "prettier --write \"{src,test}/**/*.ts\"",
+    "release": "standard-version",
+    "start": "node --preserve-symlinks dist/index.js",
+    "start:debug": "cross-env DEBUG=msh-dispatcher:* DEBUG_COLORS=true node --preserve-symlinks --inspect=0.0.0.0 dist/index.js",
+    "tsc": "npx tsc",
+    "tslint": "pnpm run tslint:base -- --force",
+    "tslint:base": "tslint -c ./tslint.json \"src/**/*.ts\" \"test/**/*.ts\"",
+    "tslint:fix": "pnpm run tslint:base -- --fix",
+    "watch": "npm-run-all build -p watch:**",
+    "watch:assets": "pnpm run assets -- -w",
+    "watch:start:debug": "npm-watch",
+    "watch:tsc": "pnpm run tsc -- -w"
+  },
+  "sideEffects": false,
+  "watch": {
+    "start:debug": {
+      "patterns": [
+        "dist"
+      ],
+      "extensions": "js",
+      "quiet": false,
+      "delay": 500,
+      "legacyWatch": true
+    }
+  }
+}

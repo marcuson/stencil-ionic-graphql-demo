@@ -1,0 +1,21 @@
+{
+  "name": "marcuson-stencil-ionic-graphql-demo",
+  "author": "marcuson",
+  "devDependencies": {
+    "syncpack": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=5"
+  },
+  "scripts": {
+    "i:all": "pnpm run install:all",
+    "install:all": "pnpm i && pnpm --filter {packages} i",
+    "preinstall": "npx only-allow pnpm",
+    "preinstall:all": "npx only-allow pnpm",
+    "run:api": "pnpm run --filter {packages/api} --",
+    "syncpack": "syncpack",
+    "syncpack:format": "syncpack format",
+    "watch": "pnpm run --filter {packages} watch"
+  }
+}
