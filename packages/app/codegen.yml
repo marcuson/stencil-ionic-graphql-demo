@@ -1,0 +1,35 @@
+overwrite: true
+schema: 'http://localhost:3000/api/graphql'
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - add:
+          content: /* tslint:disable */
+      - typescript
+  src/:
+    documents: 'src/**/*.gql'
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.tsx
+      baseTypesPath: generated/graphql.ts
+    plugins:
+      - 'typescript-operations'
+      - 'typescript-stencil-apollo'
+    config:
+      componentType: class
+
+  /:
+    documents: 'src/**/*.gql'
+    preset: near-operation-file
+    presetConfig:
+      extension: .gql-def.ts
+      baseTypesPath: generated/graphql.ts
+    plugins:
+      - add:
+          content: '/*'
+          placement: 'prepend'
+      - add:
+          content: '*/'
+          placement: 'content'
+      - './scripts/doc-node-plugin.js':
+          nameSuffix: 'GqlQuery'

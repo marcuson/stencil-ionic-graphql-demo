@@ -14,7 +14,9 @@
     "install:all": "pnpm i && pnpm --filter {packages} i",
     "preinstall": "npx only-allow pnpm",
     "preinstall:all": "npx only-allow pnpm",
+    "gqlgen": "pnpm run --filter {packages/api} graphql:schema && pnpm run --filter {packages/app} gqlgen",
     "run:api": "pnpm run --filter {packages/api} --",
+    "run:app": "pnpm run --filter {packages/app} --",
     "syncpack": "syncpack",
     "syncpack:format": "syncpack format",
     "watch": "pnpm run --filter {packages} watch"

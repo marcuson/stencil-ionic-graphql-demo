@@ -1,0 +1,8 @@
+mutation addNote {
+  createNote(note: { title: "New note", color: "ffffff" }) {
+    id
+    title
+    msg
+    color
+  }
+}

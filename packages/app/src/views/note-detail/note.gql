@@ -1,0 +1,8 @@
+query note($id: String!) {
+  note(id: $id) {
+    id
+    title
+    msg
+    color
+  }
+}

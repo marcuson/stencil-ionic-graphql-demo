@@ -1,0 +1,4 @@
+.preview input,
+.preview textarea {
+  cursor: pointer;
+}

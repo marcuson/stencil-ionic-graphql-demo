@@ -1,0 +1,49 @@
+{
+  "name": "marcuson-stencil-ionic-graphql-demo-app",
+  "description": "Stencil + Ionic + GraphQL demo - APP",
+  "version": "1.0.0",
+  "dependencies": {
+    "@graphql-codegen/near-operation-file-preset": "^1.17.11",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.4.0",
+    "graphql-tag": "^2.11.0",
+    "lodash.debounce": "^4.0.8",
+    "stencil-apollo": "https://github.com/marcuson/stencil-apollo#fix-apollo-query-dist"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.19.0",
+    "@graphql-codegen/introspection": "1.18.0",
+    "@graphql-codegen/typescript": "1.17.11",
+    "@graphql-codegen/typescript-document-nodes": "^1.17.8",
+    "@graphql-codegen/typescript-operations": "1.17.8",
+    "@graphql-codegen/typescript-stencil-apollo": "1.17.8",
+    "@ionic/core": "^5.4.1",
+    "@stencil/core": "^2.2.0",
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/node": "^14.14.6",
+    "ionicons": "^5.2.3",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.7.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-graphql-tag": "^0.1.0",
+    "ts-node": "^9.0.0",
+    "workbox-build": "5.1.4"
+  },
+  "files": [
+    "dist/"
+  ],
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run gqlgen && pnpm run build:stencil",
+    "build:stencil": "stencil build",
+    "clean": "rimraf www src/generated **/*.gql-def.ts **/*.generated.tsx",
+    "generate": "stencil generate",
+    "gqlgen": "graphql-codegen --config codegen.yml",
+    "start": "stencil build --dev --watch --serve",
+    "watch": "npm-run-all -p watch:**",
+    "watch:gqlgen": "pnpm run gqlgen -- -w",
+    "watch:start": "pnpm run start"
+  }
+}

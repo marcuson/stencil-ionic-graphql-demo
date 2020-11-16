@@ -1,0 +1,8 @@
+query notes {
+  notes {
+    id
+    title
+    msg
+    color
+  }
+}
