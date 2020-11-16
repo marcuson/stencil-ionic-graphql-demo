@@ -60,7 +60,7 @@
   "scripts": {
     "assets": "cpx \"src/assets/**/*\" \"dist/assets\"",
     "build": "pnpm run graphql:schema && pnpm run assets && pnpm run tsc",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rimraf src/assets/*",
     "graphql:schema": "ts-node-script ./scripts/update-graphql-schema.ts",
     "pretest": "rimraf test-results",
     "prettier": "prettier --write \"{src,test}/**/*.ts\"",
