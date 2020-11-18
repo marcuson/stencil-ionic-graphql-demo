@@ -4,14 +4,14 @@ dependencies:
   graphql: 15.4.0
   graphql-tag: 2.11.0_graphql@15.4.0
   lodash.debounce: 4.0.8
-  stencil-apollo: github.com/marcuson/stencil-apollo/d3a7a6c876ac027893600aca91a4367f22feff7b_61edad96dc558f3dad3097aea1ce4739
+  stencil-apollo: 0.1.6_61edad96dc558f3dad3097aea1ce4739
 devDependencies:
   '@graphql-codegen/cli': 1.19.1_graphql@15.4.0
   '@graphql-codegen/introspection': 1.18.0_graphql@15.4.0
   '@graphql-codegen/typescript': 1.17.11_graphql@15.4.0
   '@graphql-codegen/typescript-document-nodes': 1.17.8_graphql@15.4.0
   '@graphql-codegen/typescript-operations': 1.17.8_graphql@15.4.0
-  '@graphql-codegen/typescript-stencil-apollo': 1.17.8_06017a057fec76a04f25f0d6e7debb57
+  '@graphql-codegen/typescript-stencil-apollo': 1.17.8_6ce2bc829ee690b8e1bc5937d854ceba
   '@ionic/core': 5.4.4
   '@stencil/core': 2.3.0
   '@types/lodash.debounce': 4.0.6
@@ -1149,7 +1149,7 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
     resolution:
       integrity: sha512-nU1ZldRB4vGcg4FQhOp3GOOyjfIwO+cI110zZhxQw8SV7pbNDJnCckbvkdEOkW+1/jVJcUul8jQVvuym5olipw==
-  /@graphql-codegen/typescript-stencil-apollo/1.17.8_06017a057fec76a04f25f0d6e7debb57:
+  /@graphql-codegen/typescript-stencil-apollo/1.17.8_6ce2bc829ee690b8e1bc5937d854ceba:
     dependencies:
       '@graphql-codegen/plugin-helpers': 1.18.1_graphql@15.4.0
       '@graphql-codegen/visitor-plugin-common': 1.17.17_graphql@15.4.0
@@ -1158,7 +1158,7 @@ packages:
       graphql-tag: 2.11.0_graphql@15.4.0
       param-case: 3.0.3
       pascal-case: 3.1.1
-      stencil-apollo: github.com/marcuson/stencil-apollo/d3a7a6c876ac027893600aca91a4367f22feff7b_61edad96dc558f3dad3097aea1ce4739
+      stencil-apollo: 0.1.6_61edad96dc558f3dad3097aea1ce4739
       tslib: 2.0.3
     dev: true
     peerDependencies:
@@ -4860,6 +4860,18 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HXXqVUq7+pcKeLqqZj6mHFUMvXtOJt1uoUx09pFW6011inTMxqI8BA8PM95myrIyyKwdnzjdFjLiE6KBPVtJIg==
+  /stencil-apollo/0.1.6_61edad96dc558f3dad3097aea1ce4739:
+    dependencies:
+      '@stencil/state-tunnel': 1.0.1
+      graphql: 15.4.0
+      graphql-tag: 2.11.0_graphql@15.4.0
+    dev: false
+    peerDependencies:
+      apollo-client: ^2.4.13
+      graphql: ^14.1.1 || ^15.0.0
+      graphql-tag: ^2.10.1
+    resolution:
+      integrity: sha512-jgTyBngLdKF/MrHC/mZOelAmWAhF7FIVQIb3PDEzw2mfiTvuUkVm99ogy633uWoKu4XRVvG56qWvxbX5dqEFLg==
   /string-env-interpolation/1.0.1:
     dev: true
     resolution:
@@ -5686,22 +5698,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==
-  github.com/marcuson/stencil-apollo/d3a7a6c876ac027893600aca91a4367f22feff7b_61edad96dc558f3dad3097aea1ce4739:
-    dependencies:
-      '@stencil/state-tunnel': 1.0.1
-      graphql: 15.4.0
-      graphql-tag: 2.11.0_graphql@15.4.0
-    dev: false
-    id: github.com/marcuson/stencil-apollo/d3a7a6c876ac027893600aca91a4367f22feff7b
-    name: stencil-apollo
-    peerDependencies:
-      apollo-client: ^2.4.13
-      graphql: ^14.1.1 || ^15.0.0
-      graphql-tag: ^2.10.1
-    requiresBuild: true
-    resolution:
-      tarball: 'https://codeload.github.com/marcuson/stencil-apollo/tar.gz/d3a7a6c876ac027893600aca91a4367f22feff7b'
-    version: 0.1.5
 specifiers:
   '@graphql-codegen/cli': ^1.19.0
   '@graphql-codegen/introspection': 1.18.0
@@ -5724,6 +5720,6 @@ specifiers:
   prettier: ^2.1.2
   rimraf: ^3.0.2
   rollup-plugin-graphql-tag: ^0.1.0
-  stencil-apollo: 'https://github.com/marcuson/stencil-apollo#fix-apollo-query-dist'
+  stencil-apollo: ^0.1.6
   ts-node: ^9.0.0
   workbox-build: 5.1.4
