@@ -9,6 +9,7 @@
     "pnpm": ">=5"
   },
   "scripts": {
+    "android": "pnpm run --filter {packages/app} android",
     "clean": "pnpm run --filter {packages} clean",
     "i:all": "pnpm run install:all",
     "install:all": "pnpm i && pnpm --filter {packages} i",

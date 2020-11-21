@@ -3,6 +3,7 @@
   "description": "Stencil + Ionic + GraphQL demo - APP",
   "version": "1.0.0",
   "dependencies": {
+    "@capacitor/android": "^2.4.3",
     "@graphql-codegen/near-operation-file-preset": "^1.17.11",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.4.0",
@@ -11,6 +12,8 @@
     "stencil-apollo": "^0.1.6"
   },
   "devDependencies": {
+    "@capacitor/cli": "^2.4.3",
+    "@capacitor/core": "^2.4.3",
     "@graphql-codegen/cli": "^1.19.0",
     "@graphql-codegen/introspection": "1.18.0",
     "@graphql-codegen/typescript": "1.17.11",
@@ -36,6 +39,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "android": "pnpm run build && pnpm run android:open",
+    "android:open": "pnpx cap copy && pnpx cap open android",
     "build": "pnpm run gqlgen && pnpm run build:stencil",
     "build:stencil": "stencil build",
     "clean": "rimraf www src/generated **/*.gql-def.ts **/*.generated.tsx",

@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { graphqlService } from '../../services/graphql.service';
 import { getRouter } from '../../utils/routing.utils';
 import { NotesGqlQuery } from './notes.gql-def';
 
@@ -7,6 +8,13 @@ import { NotesGqlQuery } from './notes.gql-def';
   styleUrl: 'home.css',
 })
 export class SigDemoHome {
+  graphqlHost: string = graphqlService.graphQLHost;
+
+  async setGrahpQLUrl() {
+    graphqlService.setGraphQLUrl(this.graphqlHost);
+    window.location.reload();
+  }
+
   goToNotePage(noteId: string) {
     getRouter().push(`/notes/${noteId}`);
   }
@@ -15,6 +23,16 @@ export class SigDemoHome {
     return [
       <sig-demo-top-bar topBarTitle="Notes" />,
       <ion-content class="ion-padding" fullscreen>
+        <ion-item class="ion-margin-bottom">
+          <ion-label position="stacked">GraphQL hostname or IP (you can use "localhost")</ion-label>
+          <ion-input
+            value={graphqlService.graphQLHost}
+            onIonChange={ev => (this.graphqlHost = ev.detail.value)}
+          ></ion-input>
+          <ion-button slot="end" onClick={() => this.setGrahpQLUrl()}>
+            Save
+          </ion-button>
+        </ion-item>
         <apollo-notes
           renderer={({ data, loading }) => {
             if (loading) {
