@@ -12,7 +12,7 @@ You must have at least the following tools installed on your machine:
 - pnpm (ver. 5+), just run `npm i -g pnpm` to install
 - an IDE of your choice (VSCode recommended)
 
-IF you want to try out the Android app, you should also have installed:
+If you want to try out the Android app, you should also have installed:
 
 - Android Studio
 - Android SDK (you can install it via SDK Manager inside Android Studio). Remember to install SDK
