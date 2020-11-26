@@ -1,5 +1,9 @@
 # Stencil + Ionic + GraphQL demo = awesomeness!
 
+This is a demo application related to the TechItalia + KubeCon meeting speech given on 26/11/2020,
+you can find the presentation
+[here](https://speakerdeck.com/marcuson/stencil-plus-ionic-plus-graphql-a-great-approach-for-modern-web-apps-and-more).
+
 ## Development tools
 
 You must have at least the following tools installed on your machine:
